@@ -1,0 +1,132 @@
+{
+  "player": [
+    {
+      "id": 1,
+      "firstName": "Sandeep",
+      "lastName": "Potdukhe",
+      "age": "23",
+      "gender": "male",
+      "categoryId": "Minimumweight"
+    },
+    {
+      "id": 15,
+      "firstName": "Mohammad",
+      "lastName": "Kazi",
+      "age": "23",
+      "gender": "male",
+      "categoryId": "Flyweight"
+    },
+    {
+      "id": 89,
+      "firstName": "Abrar",
+      "lastName": "Nirban",
+      "age": "22",
+      "gender": "male",
+      "categoryId": "Lightweight"
+    },
+    {
+      "id": 35,
+      "firstName": "Any",
+      "lastName": "Xyz",
+      "age": "23",
+      "gender": "male",
+      "categoryId": "Lightweight"
+    }
+  ],
+  "matches": [
+    [
+      [
+        {
+          "id": 89,
+          "firstName": "Abrar",
+          "lastName": "Nirban",
+          "age": "22",
+          "gender": "male",
+          "categoryId": "Lightweight"
+        },
+        {
+          "id": 15,
+          "firstName": "Mohammad",
+          "lastName": "Kazi",
+          "age": "23",
+          "gender": "male",
+          "categoryId": "Flyweight"
+        }
+      ],
+      [
+        {
+          "id": 41,
+          "firstName": "Tejas ",
+          "lastName": "Ingole",
+          "age": "23",
+          "gender": "male",
+          "categoryId": "Flyweight"
+        },
+        {
+          "id": 1,
+          "firstName": "Sandeep",
+          "lastName": "Potdukhe",
+          "age": "23",
+          "gender": "male",
+          "categoryId": "Minimumweight"
+        }
+      ]
+    ]
+  ],
+  "matchResult": [
+    {
+      "player1FirstName": "Abrar",
+      "player2FirstName": "Mohammad",
+      "p1TotalPoints": 13,
+      "p2TotalPoints": 16,
+      "winner": "Abrar",
+      "id": 1
+    },
+    {
+      "player1FirstName": "Abrar",
+      "player2FirstName": "Mohammad",
+      "p1TotalPoints": 13,
+      "p2TotalPoints": 14,
+      "winner": "Abrar",
+      "id": 2
+    }
+  ],
+  "ranking": [
+    {
+      "id": 1,
+      "firstName": "Sandeep",
+      "lastName": "Potdukhe",
+      "age": "23",
+      "gender": "male",
+      "categoryId": "Minimumweight",
+      "rank": 3
+    },
+    {
+      "id": 41,
+      "firstName": "Tejas ",
+      "lastName": "Ingole",
+      "age": "23",
+      "gender": "male",
+      "categoryId": "Flyweight",
+      "rank": 4
+    },
+    {
+      "id": 15,
+      "firstName": "Mohammad",
+      "lastName": "Kazi",
+      "age": "23",
+      "gender": "male",
+      "categoryId": "Flyweight",
+      "rank": 2
+    },
+    {
+      "id": 89,
+      "firstName": "Abrar",
+      "lastName": "Nirban",
+      "age": "22",
+      "gender": "male",
+      "categoryId": "Lightweight",
+      "rank": 1
+    }
+  ]
+}

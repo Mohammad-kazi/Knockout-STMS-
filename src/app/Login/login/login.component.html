@@ -1,0 +1,54 @@
+<div class="container img px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5 txt">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 mb-3 txt">
+        kNOCKOUT : Boxing Tournament Management System
+      </h1>
+      <p class="col-lg-10 fs-4">
+        There's nothing that can compare to testing yourself the way you do
+        every time you step in the ring.
+      </p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form
+        (ngSubmit)="onSubmit()"
+        class="p-4 p-md-5 border rounded-3 bg-body-tertiary"
+      >
+        <div class="form-floating form-group mb-3 lg-txt">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            [(ngModel)]="userName"
+            [ngModelOptions]="{ standalone: true }"
+            placeholder="Username"
+          />
+          <label for="floatingInput">Username</label>
+        </div>
+
+        <div class="form-floating mb-3 lg-txt">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            [(ngModel)]="password"
+            [ngModelOptions]="{ standalone: true }"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+
+        <div class="checkbox mb-3 lg-txt" style="color: black">
+          <label>
+            <input type="checkbox" value="remember-me" /> Remember me
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
+          Log In
+        </button>
+
+        <hr class="my-4" />
+      </form>
+    </div>
+  </div>
+</div>

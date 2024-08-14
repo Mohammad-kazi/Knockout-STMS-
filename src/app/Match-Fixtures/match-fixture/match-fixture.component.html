@@ -1,0 +1,32 @@
+<div class="container-fluid text-center justify-center">
+  <h2>Match Pairs</h2>
+
+  <div *ngFor="let pairSet of pairs">
+    <ng-container *ngFor="let pair of pairSet">
+      <ng-container *ngIf="pair">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card text-center">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJqsrXcupSIp4aUhbCx4OoWYvMuY2AmZ0c4g&usqp=CAU"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{ pair[0].firstName }} vs {{ pair[1].firstName }}
+                </h5>
+                <button
+                  class="btn btn-primary"
+                  routerLink="/match/{{ pair[0].id }}/{{ pair[1].id }}"
+                >
+                  Start Match
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

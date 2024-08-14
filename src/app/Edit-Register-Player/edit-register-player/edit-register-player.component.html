@@ -1,0 +1,6 @@
+<h2>Edit Player Details</h2>
+<app-player-form
+  *ngIf="model"
+  [model]="model"
+  (OnPlayerEvent)="saveChanges($event)"
+></app-player-form>

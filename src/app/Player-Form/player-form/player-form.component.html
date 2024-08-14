@@ -1,0 +1,130 @@
+<div class="container">
+  <form (submit)="saveChanges()" [formGroup]="registerForm">
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label"
+        >Player's First Name</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput"
+        placeholder="Enter Player's First Name"
+        formControlName="firstName"
+        autocomplete="off"
+      />
+    </div>
+    <div
+      *ngIf="
+        registerForm.get('firstName')?.touched &&
+        registerForm.get('firstName')?.hasError('required')
+      "
+      class="text-danger"
+    >
+      Please Enter valid First Name.
+    </div>
+    <div
+      *ngIf="
+        registerForm.get('firstName')?.touched &&
+        registerForm.get('firstName')?.hasError('minlength')
+      "
+      class="text-danger"
+    >
+      First Name must be at least 2 characters long.
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label"
+        >Player's Last Name</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput"
+        placeholder="Enter Player' Last Name"
+        formControlName="lastName"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div
+      *ngIf="
+        registerForm.get('lastName')?.touched &&
+        registerForm.get('lastName')?.hasError('required')
+      "
+      class="text-danger"
+    >
+      Please Enter valid Last Name.
+    </div>
+    <div
+      *ngIf="
+        registerForm.get('lastName')?.touched &&
+        registerForm.get('lastName')?.hasError('minlength')
+      "
+      class="text-danger"
+    >
+      Last Name must be at least 2 characters long.
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Player Age</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupExampleInput2"
+        placeholder="Enter Player's Age"
+        formControlName="age"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div
+      *ngIf="
+        registerForm.get('age')?.touched &&
+        registerForm.get('age')?.hasError('min')
+      "
+      class="text-danger"
+    >
+      Age must be above 18.
+    </div>
+    <div>
+      <label for="formGroupExampleInput2" class="form-label">Gender</label>
+      <select class="form-select" formControlName="gender">
+        <option selected value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <div
+        *ngIf="registerForm.get('gender')?.hasError('noEventForWomen')"
+        class="text-danger"
+      >
+        There is no event going on for women.
+      </div>
+    </div>
+    <br />
+    <label for="formGroupExampleInput2" class="form-label">Category</label>
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      formControlName="categoryId"
+      placeholder="ANy"
+    >
+      <option value="Lightweight">Lightweight (50-53kg)</option>
+    </select>
+    <br />
+    <div class="d-grid gap-2">
+      <button
+        class="btn btn-success"
+        type="submit"
+        [disabled]="!registerForm.valid"
+      >
+        Save
+      </button>
+      <div
+        *ngIf="registerForm.invalid && registerForm.dirty"
+        class="text-danger mt-2"
+      >
+        Please check if the data is entered correctly.
+      </div>
+      <button class="btn btn-danger" type="button" routerLink="/home">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

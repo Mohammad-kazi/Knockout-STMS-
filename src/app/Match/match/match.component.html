@@ -1,0 +1,238 @@
+<div class="container text-center justify-center">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mb-3">
+        <div class="card-header">Ongoing Match</div>
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ player1.firstName }} vs. {{ player2.firstName }}
+          </h5>
+          <p class="card-text">Match Date: {{ date }}</p>
+          <p class="card-text">Location: Stadium Name</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <div class="col-md-12">
+      <div class="card mb-3">
+        <div class="card-header">
+          <h2>Match Round</h2>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center justify-center">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card mb-3"></div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Round</th>
+                <th scope="col">{{ player1.firstName }}</th>
+                <th scope="col">{{ player2.firstName }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>First</td>
+                <td>
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="numberInput1"
+                      name="positiveNumber"
+                      placeholder="Enter points"
+                      [(ngModel)]="p1R1Points"
+                      #numberInput1="ngModel"
+                      required
+                      min="0"
+                      max="10"
+                      step="any"
+                    />
+                    <div
+                      *ngIf="
+                        numberInput1.invalid &&
+                        (numberInput1.dirty || numberInput1.touched)
+                      "
+                      style="color: red"
+                    >
+                      Please enter valid points.
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="numberInput2"
+                      name="positiveNumber"
+                      placeholder="Enter points"
+                      [(ngModel)]="p2R1Points"
+                      #numberInput2="ngModel"
+                      required
+                      min="0"
+                      max="10"
+                      step="any"
+                    />
+                    <div
+                      *ngIf="
+                        numberInput2.invalid &&
+                        (numberInput2.dirty || numberInput2.touched)
+                      "
+                      style="color: red"
+                    >
+                      Please enter a points.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Second</td>
+                <td>
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="numberInput"
+                      name="positiveNumber"
+                      placeholder="Enter points"
+                      [(ngModel)]="p1R2Points"
+                      #numberInput3="ngModel"
+                      required
+                      min="0"
+                      max="10"
+                      step="any"
+                    />
+                    <div
+                      *ngIf="
+                        numberInput3.invalid &&
+                        (numberInput3.dirty || numberInput3.touched)
+                      "
+                      style="color: red"
+                    >
+                      Please enter valid points.
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="numberInput"
+                      name="positiveNumber"
+                      placeholder="Enter points"
+                      [(ngModel)]="p2R2Points"
+                      #numberInput4="ngModel"
+                      required
+                      min="0"
+                      max="10"
+                      step="any"
+                    />
+                    <div
+                      *ngIf="
+                        numberInput4.invalid &&
+                        (numberInput4.dirty || numberInput4.touched)
+                      "
+                      style="color: red"
+                    >
+                      Please enter valid points.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Third</td>
+                <td>
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="numberInput"
+                      name="positiveNumber"
+                      placeholder="Enter points"
+                      [(ngModel)]="p1R3Points"
+                      #numberInput5="ngModel"
+                      required
+                      min="0"
+                      max="10"
+                      step="any"
+                    />
+                    <div
+                      *ngIf="
+                        numberInput5.invalid &&
+                        (numberInput5.dirty || numberInput5.touched)
+                      "
+                      style="color: red"
+                    >
+                      Please enter valid points.
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="numberInput"
+                      name="positiveNumber"
+                      placeholder="Enter points"
+                      [(ngModel)]="p2R3Points"
+                      #numberInput6="ngModel"
+                      required
+                      min="0"
+                      max="10"
+                      step="any"
+                    />
+                    <div
+                      *ngIf="
+                        numberInput6.invalid &&
+                        (numberInput6.dirty || numberInput6.touched)
+                      "
+                      style="color: red"
+                    >
+                      Please enter valid points.
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Total</td>
+                <td [(ngModel)]="p1TotalPoints">
+                  {{ calculateTotalPointsPlayer1() }}
+                </td>
+                <td [(ngModel)]="p2TotalPoints">
+                  {{ calculateTotalPointsPlayer2() }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <div class="alert alert-success" role="alert" *ngIf="winnerMessage">
+      <h3>{{ winnerMessage }}</h3>
+      <button class="btn btn-primary" (click)="saveMatchResult()">
+        Save Result
+      </button>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <button class="btn btn-primary" (click)="calculateWinner()">
+      Calculate Winner
+    </button>
+  </div>
+</div>

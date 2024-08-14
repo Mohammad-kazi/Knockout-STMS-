@@ -1,0 +1,20 @@
+
+
+.container {
+    background-image: url('https://img.freepik.com/premium-vector/empty-wrestling-sport-arena-boxing-ring-dramatic-sports-vector-background-sport-competition-ring-wrestling-boxing-arena-illustration_53562-6181.jpg?size=626&ext=jpg');
+    background-size: cover; 
+    background-position: center center; /* Adjust as needed */
+    background-repeat: no-repeat;
+    margin-top: 5px;
+    border-radius: 12px;
+  }
+
+  .txt{
+    color: aliceblue;
+  }
+
+  .lg-txt
+  {
+    color: black;
+  }
+  

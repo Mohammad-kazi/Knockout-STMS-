@@ -1,0 +1,29 @@
+<div class="container text-center">
+  <div class="col-md-12">
+    <h2>Ranking</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Category</th>
+            <th>Rank</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of sortedRankingData">
+            <td>{{ player.id }}</td>
+            <td>{{ player.firstName }} {{ player.lastName }}</td>
+            <td>{{ player.age }}</td>
+            <td>{{ player.gender }}</td>
+            <td>{{ player.categoryId }}</td>
+            <td>{{ player.rank }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
